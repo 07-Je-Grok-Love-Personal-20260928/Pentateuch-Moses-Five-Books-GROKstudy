@@ -110,3 +110,41 @@ def QI(text,url,label=''):
 def HCu(n): return HCQ[n]['url']
 def BCu(n): return BCA[n]['url']
 def DTu(h,n): return [x for x in DH[h]['articles'] if x['number']==int(n)][0]['url']
+# ---------- 笔记标记 / 视频 / 图例 ----------
+def mk(t,k='core'):
+    """高亮：core教义 / vs钥节 / bg背景 / app应用 / ch基督圣约 / hard难点"""
+    return f'<mark class="mk {k}">{t}</mark>'
+def un(t,k='core',wavy=False):
+    return f'<span class="un {k}{" wavy" if wavy else ""}">{t}</span>'
+def call(k,title,body):
+    return f'<aside class="call {k}"><div class="chd">{title}</div><div class="cbd">{body}</div></aside>'
+MARKLEGEND=('<div class="nleg" role="note"><h4>笔记标记图例</h4><ul>'
+    '<li><mark class="mk core">核心教义</mark> 红底 · 红实线</li>'
+    '<li><mark class="mk verse">钥节金句</mark> 金底 · 金实线</li>'
+    '<li><mark class="mk bg">历史背景</mark> 蓝底 · 蓝实线</li>'
+    '<li><mark class="mk ch">基督 / 圣约</mark> 紫底 · 紫实线</li>'
+    '<li><mark class="mk app">生活应用</mark> 绿底 · 绿实线</li>'
+    '<li><mark class="mk hard">难点疑义</mark> 玫红底 · 虚线</li>'
+    '<li><span class="un core wavy">波浪线</span> 特别提醒 / 易混点</li>'
+    '</ul></div>')
+LEGEND=chips(('⭐ 重点','g'),('🧩 难点','r'),('✝️ 指向基督','v'),('🤝 圣约','t'),('🏺 真实背景','s'),('🌍 近东文化','o'),('🌱 应用','n'),('📜 信条原文（CCI 逐字）',''))+MARKLEGEND
+VIDEOS={
+ 'gen1':('nGpETp-p-4Y','创世记 1–11章','圣经工程官方普通话概述（约5分钟）'),
+ 'gen2':('z47Z_FNblgM','创世记 12–50章','圣经工程官方普通话概述（约4分钟）'),
+ 'exo1':('veEkSQlZvOI','出埃及记 1–18章','圣经工程官方普通话概述（约5分钟）'),
+ 'exo2':('q8bIxml3XhE','出埃及记 19–40章','圣经工程官方普通话概述（约5分钟）'),
+ 'lev':('1RULLrxqbqE','利未记','圣经工程官方普通话概述（约7分钟）'),
+ 'num':('7NhEnritZKA','民数记','圣经工程官方普通话概述（约5分钟）'),
+ 'deu':('h4mYierOEGU','申命记','圣经工程官方普通话概述（约6分钟）'),
+}
+def video(*keys,lead='点击封面后才加载播放器，不自动播放。视频为圣经工程（BibleProject）官方普通话概述，作结构导览；本站神学立场以欧陆改革宗三项联合信条为准。'):
+    figs=[]
+    for k in keys:
+        i,title,note=VIDEOS[k]
+        figs.append(
+            f'<figure class="yt" data-yt="{i}">'
+            f'<button type="button" class="ytbtn" aria-label="播放：{esc(title)}">'
+            f'<img src="https://i.ytimg.com/vi/{i}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">'
+            f'<span class="play" aria-hidden="true">▶</span><b>{esc(title)}</b></button>'
+            f'<figcaption>📹 {esc(note)} · <a href="https://www.youtube.com/watch?v={i}" target="_blank" rel="noopener">在 YouTube 打开</a>（BibleProject 普通话频道）</figcaption></figure>')
+    return (f'<div class="vidsec"><p class="note">{lead}</p><div class="vidgrid">{"".join(figs)}</div></div>')

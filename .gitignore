@@ -1,8 +1,8 @@
 build/cache/
 __pycache__/
 *.pyc
-
-# Local Netlify folder
 .netlify
 .netlify/
 site/CNAME
+CNAME
+deploy-surge/

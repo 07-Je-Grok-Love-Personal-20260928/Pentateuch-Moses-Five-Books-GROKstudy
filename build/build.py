@@ -4,6 +4,22 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 import lib,tpl
 from bible import verses
 OUT='../site'
+
+# copy static assets (css/js/vendor) — never copy a CNAME
+import shutil
+ST=os.path.join(os.path.dirname(os.path.abspath(__file__)),'static')
+A=os.path.join(OUT,'assets')
+os.makedirs(A,exist_ok=True)
+for fn in ('site.css','site.js'):
+    shutil.copy2(os.path.join(ST,fn), os.path.join(A,fn))
+vend_src=os.path.join(ST,'vendor')
+vend_dst=os.path.join(A,'vendor')
+if os.path.isdir(vend_src):
+    if os.path.isdir(vend_dst): shutil.rmtree(vend_dst)
+    shutil.copytree(vend_src,vend_dst)
+# prevent accidental CNAME in site/
+cn=os.path.join(OUT,'CNAME')
+if os.path.exists(cn): os.remove(cn)
 MODS={'index.html':'p_index','genesis.html':'p_genesis','exodus.html':'p_exodus','leviticus.html':'p_leviticus','numbers.html':'p_numbers','deuteronomy.html':'p_deuteronomy','covenant.html':'p_covenant','atlas.html':'p_atlas','creeds.html':'p_creeds','confessions.html':'p_confessions','memory.html':'p_memory','sources.html':'p_sources'}
 warn=[]
 def norm(s): return re.sub(r'[\s，。；：、！？「」『』“”‘’―…—,.;:!?()（）《》·]','',s)

@@ -88,7 +88,82 @@ DEU=dict(id='deut',title='申命记 34 章：摩西在毗斯迦山顶所看见�
  lines=[('摩西的目光：向北',[(35.73,31.77),(35.65,33.25)],'blue'),('向西',[(35.73,31.77),(34.9,31.55)],'gold'),('向南',[(35.73,31.77),(34.85,31.05)],'orange')],
  water=[('西海（大海）',34.4,32.0),('盐海',35.53,31.5),('基尼烈海',35.6,32.88)],
  rcap='三条虚线示意申34:1–3 中摩西从毗斯迦山顶向北、西、南的远眺')
-ALL=[ANE,CAN,EXO,NUM,DEU]
+
+ABR=dict(id='abraham',title='亚伯拉罕的旅程：吾珥 → 哈兰 → 迦南 → 埃及 → 再回迦南',bbox=(29.5,48.5,27.8,38.2),fs=18,
+ markers=[M('ur','吾珥','Ur',46.10,30.96,'创11:31','迦勒底的吾珥，亚伯兰故乡。','gold',True),
+ M('har','哈兰','Haran',39.03,36.86,'创11:31–12:4','他拉一家暂居；后为利百加、拉结家乡。','gold',True),
+ M('dam','大马士革','Damascus',36.29,33.51,'创14:15；15:2','追敌至大马士革北；以利以谢是大马士革人。','blue'),
+ M('she','示剑','Shechem',35.28,32.21,'创12:6–7','进迦南第一座坛；应许「这地赐给你的后裔」。','gold',True),
+ M('bet','伯特利','Bethel',35.22,31.93,'创12:8','在伯特利与艾中间支搭帐棚、筑坛。','gold'),
+ M('heb','希伯仑（幔利）','Hebron',35.10,31.53,'创13:18；18；23','橡树下蒙访；麦比拉洞为族长坟地。','gold',True),
+ M('bee','别是巴','Beersheba',34.84,31.24,'创21:31–33','立约之井；呼求耶和华永活神的名。','blue'),
+ M('ger','基拉耳','Gerar',34.58,31.38,'创20','与亚比米勒（位置推定）。','gray'),
+ M('mor','摩利亚地（撒冷）','Moriah / Salem',35.23,31.78,'创22:2；14:18','献以撒；麦基洗德是撒冷王。','purple',True),
+ M('mem','埃及（寄居）','Egypt',31.25,29.85,'创12:10–20','因饥荒下埃及，后又上来。','red')],
+ routes=[('ur','har','gold',.15),('har','she','gold',.2),('she','bet','gold',.1),('bet','heb','gold',.15),('heb','mem','gold',-.2),('mem','bee','gold',.15),('bee','mor','purple',.15)],
+ water=[('大海',30.5,33.2),('波斯湾',50.2,27.6)],
+ regions=[('美索不达米亚',43.5,34.0,3.2,2.0,'orange'),('迦南',35.2,31.9,.75,1.1,'gold'),('埃及',31.0,27.8,1.4,2.4,'red')],
+ rcap='金线＝亚伯兰/亚伯拉罕的主要旅程；紫线＝往摩利亚（创22）')
+JOS=dict(id='joseph',title='约瑟下埃及：多坍 → 歌珊 / 孟斐斯一带',bbox=(30.2,36.4,29.4,33.2),fine=True,fs=18,
+ markers=[M('heb','希伯仑','Hebron',35.10,31.53,'创37:14','雅各打发约瑟去看哥哥们。','gold'),
+ M('dot','多坍','Dothan',35.24,32.41,'创37:17','约瑟被卖给米甸/以实玛利商人。','orange',True),
+ M('bee','别是巴','Beersheba',34.84,31.24,'创46:1','雅各下埃及前在此献祭。','blue'),
+ M('ona','安城（翁，太阳城）','On / Heliopolis',31.31,30.13,'创41:45','约瑟娶安城祭司波提非拉的女儿。','red'),
+ M('mem','孟斐斯','Memphis',31.25,29.85,'古王国以来','埃及古都与行政中心（推定相关）。','red'),
+ M('ram','歌珊 / 兰塞一带','Goshen / Avaris',31.82,30.80,'创47:6、11','雅各一家被安置在埃及最好的地。','red',True)],
+ routes=[('heb','dot','orange',.15),('dot','ram','red',-.15),('bee','ram','gold',.15)],
+ water=[('大海',32.3,32.0),('盐海',35.5,31.4)],
+ regions=[('迦南',35.1,31.8,.7,1.0,'gold'),('歌珊',31.8,30.7,.4,.3,'red')],
+ rcap='橙线＝约瑟被卖之路；红线＝商队下埃及；金线＝雅各全家后下')
+EXO2=dict(id='exodus2',title='出埃及路线诸说：传统南线、北线说、米甸/阿拉伯说',bbox=(30.4,36.6,27.3,32.2),fine=True,fs=17,
+ markers=[M('ram','兰塞','Rameses',31.82,30.80,'出12:37','出埃及起点。','red',True),
+ M('cro','过海（苦湖/苏伊士一带，传统推定）','Yam Suph (?)',32.48,30.15,'出14','传统南线常把过海放在苦湖或苏伊士湾北端。','red',True),
+ M('bar','巴达维尔湖（北线说推定）','Lake Bardawil (?)',32.90,31.13,'学说','北线说把苇海与地中海沿岸潟湖相联系（有争议）。','orange'),
+ M('sna','西奈山（传统：穆萨山）','Jebel Musa',33.97,28.54,'出19','传统南线的立约之山。','green',True),
+ M('law','拉兹山（阿拉伯说推定）','Jebel al-Lawz (?)',35.29,28.65,'学说','部分人主张西奈在米甸/阿拉伯半岛（有争议，非主流学术共识）。','purple'),
+ M('kad','加低斯巴尼亚','Kadesh-barnea',34.42,30.65,'民13','南地绿洲，探子出发之地。','purple',True),
+ M('neb','摩押平原 / 尼波山','Nebo / Moab',35.73,31.77,'民22–申34','旅程终点前的营地。','teal',True)],
+ routes=[('ram','cro','green',.1),('cro','sna','green',.2),('sna','kad','green',-.2),('kad','neb','teal',.15),('ram','bar','orange',-.12),('ram','law','purple',.25)],
+ water=[('大海',32.2,31.9),('苏伊士湾',32.75,29.0),('亚喀巴湾',34.7,28.6)],
+ rcap='绿线＝传统南线（本站默认）；橙线＝北线说方向；紫线＝过亚喀巴湾至拉兹山说。均为推定')
+WAN=dict(id='wander',title='旷野漂流与加低斯：从西奈到绕行以东',bbox=(33.2,36.4,27.8,32.2),fine=True,fs=18,
+ markers=[M('sna','西奈山（传统）','Jebel Musa',33.97,28.54,'民10','第二年二月二十日离开。','green',True),
+ M('kad','加低斯巴尼亚','Kadesh-barnea',34.42,30.65,'民13–14；20','不信的枢纽；米利暗死于此。','purple',True),
+ M('heb','以实各谷 / 希伯仑','Eshcol / Hebron',35.10,31.53,'民13:22–24','探子砍葡萄的地方。','gold'),
+ M('ezi','以旬迦别','Ezion-geber',34.98,29.55,'民33:35','亚喀巴湾北端的一站。','gray'),
+ M('hor','何珥山（推定）','Mount Hor (?)',35.40,30.32,'民20','亚伦去世处。','gray'),
+ M('pun','铜蛇（普嫩附近，推定）','Punon (?)',35.50,30.65,'民21:4–9','火蛇与铜蛇。','red',True)],
+ routes=[('sna','kad','green',-.2),('kad','heb','gold',.15),('kad','ezi','gray',.2),('ezi','hor','gray',-.15),('hor','pun','red',.15)],
+ water=[('亚喀巴湾',34.7,28.6),('盐海',35.5,31.3)],
+ regions=[('以东',35.55,30.4,.38,.42,'orange')],
+ rcap='绿线＝离开西奈到加低斯；金线＝探子；灰线＝漂流与绕行')
+TRJ=dict(id='transjordan',title='外约旦征服与摩押平原',bbox=(34.6,36.8,30.4,33.3),fine=True,fs=18,
+ markers=[M('arn','亚嫩河','Arnon',35.60,31.47,'民21:13','摩押与亚摩利人的界河。','blue',True),
+ M('hes','希实本','Heshbon',35.81,31.80,'民21:21–31','亚摩利王西宏的京城。','teal',True),
+ M('edr','以得来','Edrei',36.10,32.62,'民21:33–35','巴珊王噩被击败。','teal',True),
+ M('mob','摩押平原 / 什亭','Shittim',35.62,31.84,'民22–36','巴兰、巴力毗珥、第二次核点。','pink',True),
+ M('dal','代尔阿拉（巴兰铭文）','Deir Alla',35.62,32.20,'约前8世纪','出土「比珥的儿子巴兰」铭文。','orange'),
+ M('neb','尼波山','Mount Nebo',35.73,31.77,'申34','摩西观望应许之地。','gold',True),
+ M('jer','耶利哥','Jericho',35.44,31.87,'民22:1','河对岸的门户。','gold')],
+ routes=[('arn','hes','teal',.15),('hes','edr','teal',.2),('hes','mob','pink',.2)],
+ water=[('盐海',35.48,31.25),('基尼烈海',35.59,32.95)],
+ regions=[('摩押',35.85,31.3,.32,.2,'pink'),('亚扪',36.05,31.98,.28,.2,'purple'),('基列',35.82,32.33,.32,.2,'green'),('巴珊',36.25,32.85,.42,.3,'teal')],
+ rcap='青线＝击败西宏与噩；粉线＝下到摩押平原安营')
+TRIB=dict(id='tribes',title='支派地业预览：河东先得，河西待进（民32；34；申3）',bbox=(34.1,36.7,30.5,33.5),fine=True,fs=18,
+ markers=[M('reu','流便（河东南）','Reuben',35.75,31.55,'民32','河东南部高原。','green'),
+ M('gad','迦得（基列）','Gad',35.80,32.20,'民32','基列地。','green',True),
+ M('man','玛拿西东半（巴珊）','E. Manasseh',36.20,32.80,'民32；申3','巴珊。','teal',True),
+ M('jud','犹大（南地预览）','Judah',35.00,31.45,'民34','河南部，后为犹大。','gold',True),
+ M('eph','以法莲（中央山地预览）','Ephraim',35.15,32.10,'民34','中央山地。','purple'),
+ M('nap','拿弗他利（北）','Naphtali',35.50,33.00,'民34','北方加利利一带。','blue'),
+ M('ebal','以巴路 / 基利心','Ebal / Gerizim',35.27,32.22,'申27','祝福与咒诅之山。','red',True),
+ M('jer','耶利哥','Jericho',35.44,31.87,'','进迦南门户。','gold')],
+ water=[('西海',34.4,32.0),('盐海',35.53,31.5),('基尼烈海',35.6,32.88)],
+ regions=[('犹大一带',35.0,31.4,.55,.45,'gold'),('约瑟家一带',35.2,32.15,.4,.35,'purple'),('河东支派',35.95,32.2,.5,.7,'green')],
+ rcap='色块为示意分区，精确边界属于约书亚记；本图是五经末尾的「预览」')
+
+ALL=[ANE,CAN,EXO,NUM,DEU,ABR,JOS,EXO2,WAN,TRJ,TRIB]
+
 _C={}
 def render(spec,outdir='../site/assets/maps'):
     if spec['id'] in _C: return _C[spec['id']]
@@ -102,7 +177,9 @@ def _render(spec,outdir):
     inl=re.sub(r'id="(sea|ld|a[0-9a-f]{6})"',lambda m:f'id="{spec["id"]}-{m[1]}"',inl)
     inl=re.sub(r'url\(#(sea|ld|a[0-9a-f]{6})\)',lambda m:f'url(#{spec["id"]}-{m[1]})',inl)
     leg=''.join(f'<li style="--c:{PAL[m["c"]]}"><b class="n">{i+1}</b><span><b>{_h.escape(m["n"])}</b> <i class="mut sm">{_h.escape(m["en"])}</i> · <em class="cs sm">{_h.escape(m["y"])}</em><br>{_h.escape(m["t"])}</span></li>' for i,m in enumerate(spec['markers']))
-    return (f'<figure class="map{' tall' if H>W*1.1 else ''}" id="map-{spec["id"]}" style="margin:14px 0 6px">{inl}<figcaption class="mapcap"><span>🗺️ {_h.escape(spec["title"])}</span>'
+    return (f'<figure class="map{' tall' if H>W*1.1 else ''}" id="map-{spec["id"]}" style="margin:14px 0 6px">'
+            f'<img src="assets/maps/{spec["id"]}.svg" alt="{_h.escape(spec["title"])}" width="{W}" height="{H}" loading="lazy" decoding="async">'
+            f'<figcaption class="mapcap"><span>🗺️ {_h.escape(spec["title"])}</span>'
             f'<a href="assets/maps/{spec["id"]}.svg" target="_blank" rel="noopener">🔍 全屏 / 放大查看</a></figcaption></figure>'
             f'<p class="note">真实地理底图：Natural Earth（公有领域）海岸线、河流、湖泊，本站本地绘制，无第三方地图服务。{_h.escape(spec.get("rcap",""))}。古代地点多为学界通行推定，标“推定/有争议”处尚无定论。</p><ul class="mapleg">{leg}</ul>')
 if __name__=='__main__':
