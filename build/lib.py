@@ -43,10 +43,34 @@ def CQ(tag,title,text,url):
     """其他 ccifellowship.org 逐字摘引（如仪文）"""
     USED.append(('CCI',title,url,text))
     return f'<div class="cq"><div class="h"><span class="tag">{esc(tag)}</span>{esc(title)}</div><p class="a">{esc(text)}</p><div class="src">原文出处：<a href="{url}" target="_blank" rel="noopener">{url}</a></div></div>'
-# ---------- 组件 ----------
+# ---------- 大纲编号 / 多级标题 ----------
+CN=['','一','二','三','四','五','六','七','八','九','十','十一','十二','十三','十四','十五','十六']
+_part_i=0; _sec_i=0
+def reset_outline():
+    global _part_i,_sec_i; _part_i=_sec_i=0
+def _cn(n):
+    return CN[n] if n<len(CN) else str(n)
+def part(id,icon,title,c1='#7c3aed',c2='#0ea5e9'):
+    """一级（页内）：一、二、三…… 对应目录二级（全站以页面为一级）。"""
+    global _part_i,_sec_i
+    _part_i+=1; _sec_i=0
+    no=_cn(_part_i)+'、'
+    return (f'<section class="part" id="{id}">'
+            f'<h2 data-t="{esc(title)}" data-no="{no}"><span class="ic" style="--c1:{c1};--c2:{c2}">{icon}</span>'
+            f'<span class="nu">{no}</span><span>{title}</span></h2>')
+def endpart():
+    return '</section>'
 def sec(id,icon,title,body,c1='#7c3aed',c2='#0ea5e9',no=''):
-    return f'<section class="sec" id="{id}"><h2 data-t="{esc(title)}"><span class="ic" style="--c1:{c1};--c2:{c2}">{icon}</span><span>{title}</span>{f"<span class=no>{no}</span>" if no else ""}</h2>{body}</section>'
-def h3(id,t): return f'<h3 id="{id}">{t}</h3>'
+    """二级（页内 1.1）：在 part 内自动编号。"""
+    global _sec_i
+    _sec_i+=1
+    num=f'{_part_i}.{_sec_i}' if _part_i else (no or str(_sec_i))
+    return (f'<section class="sec" id="{id}"><h3 data-t="{esc(title)}" data-no="{num}">'
+            f'<span class="ic" style="--c1:{c1};--c2:{c2}">{icon}</span>'
+            f'<span class="nu">{num}</span><span>{title}</span></h3>{body}</section>')
+def h3(id,t):
+    """三级小节（渲染为 h4，供目录 1.1.1 收集）。"""
+    return f'<h4 id="{id}" data-t="{esc(t)}">{t}</h4>'
 KIND={'key':('⭐','重点'),'hard':('🧩','难点'),'christ':('✝️','指向基督'),'cov':('🤝','圣约神学'),'app':('🌱','应用'),'bg':('🏺','真实背景'),'ane':('🌍','古代近东文化'),'mem':('🧠','记忆'),'conf':('📜','信条')}
 def card(kind,title,body):
     ic,lab=KIND[kind]

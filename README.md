@@ -1,26 +1,26 @@
-# 摩西五经 Pentateuch-20261114-v2.0.0-GROKstudy
+# 摩西五经 Pentateuch-20261114-v3.0.0-GROKstudy
 
 **欧陆改革宗正统视角的摩西五经（创世记 · 出埃及记 · 利未记 · 民数记 · 申命记）研读网站**：全本圣经视野 → 逐卷深读；时间线、故事线、地理地图、真实历史背景、古代近东文化、圣经神学与圣约神学；三项联合信条（海德堡要理问答、比利时信条、多特信经）与三大公教会信经原文逐字引自 [ccifellowship.org](https://ccifellowship.org)。
 
-当前版本：**v2.0.0**（2026-11-14，台北时间）。
+当前版本：**v3.0.0**（2026-11-14，台北时间）。
 
-## 🌐 在线访问（v2.0.0）
+## 🌐 在线访问（v3.0.0）
 
 | 平台 | 链接 |
 |---|---|
 | GitHub Pages | https://07-je-grok-love-personal-20260928.github.io/Pentateuch-Moses-Five-Books-GROKstudy/ |
-| Surge | https://pentateuch-20261114-v2-grokstudy.surge.sh |
-| Netlify | https://pentateuch-20261114-v2-grokstudy.netlify.app |
+| Surge | https://pentateuch-20261114-v3-grokstudy.surge.sh |
+| Netlify | https://pentateuch-20261114-v3-grokstudy.netlify.app |
 
 - 仓库：https://github.com/07-Je-Grok-Love-Personal-20260928/Pentateuch-Moses-Five-Books-GROKstudy
-- 本版发布：https://github.com/07-Je-Grok-Love-Personal-20260928/Pentateuch-Moses-Five-Books-GROKstudy/releases/tag/v2.0.0-20261114
+- 本版发布：https://github.com/07-Je-Grok-Love-Personal-20260928/Pentateuch-Moses-Five-Books-GROKstudy/releases/tag/v3.0.0-20261114
 
 ## 📚 页面（12 页）
 
 | 页面 | 内容 |
 |---|---|
 | index.html 总览 | 核心主线、五卷一览、故事与时间线、思维导图、作者问题、圣经工程普通话概述（点击播放） |
-| genesis.html 创世记 | 核心一把抓、toledot 大纲、近东 / 亚伯拉罕 / 约瑟地图（示意图+离线底图+实时底图）、创15立约图、信条原文 |
+| genesis.html 创世记 | 编号篇章（总纲 / 叙事 / 地理 / 神学 / 研习）、toledot 大纲、近东 / 亚伯拉罕 / 约瑟地图、创15立约图、信条原文 |
 | exodus.html 出埃及记 | 路线诸说对照、会幕安营示意图、十灾与西奈之约、实时可换底图 |
 | leviticus.html 利未记 | 五祭示意图、会幕空间神学、赎罪日与圣洁 |
 | numbers.html 民数记 | 加低斯与漂流、外约旦征服、安营图、巴兰背景 |
@@ -32,7 +32,13 @@
 | memory.html 记忆 | 标记图例、五指法、26 张翻转卡、20 题测验 |
 | sources.html 来源与核对 | CCI 原文链接、实时逐字核对报告、参考网站、版本记录 |
 
-## 🗺️ 地图说明（v2）
+## 📑 目录（v3）
+
+- 全站页面为一级（一、二、三…）；本页篇章为二级（2.1、2.2…）；节与故事线小节为三级（2.1.1…）。
+- 每一级均可折叠/展开（含平滑动画）；滚动时高亮当前节并自动展开所在分支。
+- 目录打开后可拖动边缘左右改宽（鼠标与触控指针事件，亦可用左右方向键），有最小/最大宽度，宽度写入 localStorage。标题在较宽时完整显示，较窄时省略并保留 tooltip。目录仍可隐藏。手机为可拉宽的抽屉。
+
+## 🗺️ 地图说明
 
 每一组地图都包含：
 
@@ -44,7 +50,7 @@
 
 ## ✅ 引文核对
 
-- 信条/信经引文共 165 处（HC 53、DT 35、BC 30、行内片段 40、其他 CCI 4、三大信经全文 3），2026-11-14 10:18（台北时间）对 ccifellowship.org（及 reformedbeginner.net 一处）实时页面逐字核对：**165/165 通过**。
+- 信条/信经引文共 165 处（HC 53、DT 35、BC 30、行内片段 40、其他 CCI 4、三大信经全文 3），2026-11-14 13:21（台北时间）对 ccifellowship.org（及 reformedbeginner.net 一处）实时页面逐字核对：**165/165 通过**。
 - 经文采用和合本（CUV）。西敏斯特标准仅以「要旨」形式概述，不作逐字引用。
 
 ## 🛠 构建
@@ -60,5 +66,6 @@ python3 verify.py              # 实时核对引文 → verify.json，再次 bui
 
 | 版本 | 日期（台北时间） | 说明 | 部署 |
 |---|---|---|---|
-| v2.0.0（v2.0.0-20261114） | 2026-11-14 | 新增多幅地图与离线情景示意图；实时地图可切换 9 种全球底图并自动换源（自托管 Leaflet）；笔记标记系统与图例；圣经工程普通话概述（点击后加载）；滚动与动画性能优化（去掉大面积毛玻璃模糊）；更鲜明的配色与可视化。 | [Pages](https://07-je-grok-love-personal-20260928.github.io/Pentateuch-Moses-Five-Books-GROKstudy/) · [Surge](https://pentateuch-20261114-v2-grokstudy.surge.sh) · [Netlify](https://pentateuch-20261114-v2-grokstudy.netlify.app) |
+| v3.0.0（v3.0.0-20261114） | 2026-11-14 | 三级可折叠全站目录（页面为一级），目录可拖动改宽并记住宽度；滚动高亮并自动展开当前分支；章节编号与结构整理；滚动/动画再次优化（减少阴影与滤镜、静态 SVG、View Transitions、悬停预取）；引文复核 165/165。 | [Pages](https://07-je-grok-love-personal-20260928.github.io/Pentateuch-Moses-Five-Books-GROKstudy/) · [Surge](https://pentateuch-20261114-v3-grokstudy.surge.sh) · [Netlify](https://pentateuch-20261114-v3-grokstudy.netlify.app) |
+| v2.0.0（v2.0.0-20261114） | 2026-11-14 | 新增多幅地图与离线情景示意图；实时地图可切换 9 种全球底图并自动换源（自托管 Leaflet）；笔记标记系统与图例；圣经工程普通话概述（点击后加载）；滚动与动画性能优化（去掉大面积毛玻璃模糊）；更鲜明的配色与可视化。 | [Surge v2](https://pentateuch-20261114-v2-grokstudy.surge.sh) · [Netlify v2](https://pentateuch-20261114-v2-grokstudy.netlify.app) · [Release](https://github.com/07-Je-Grok-Love-Personal-20260928/Pentateuch-Moses-Five-Books-GROKstudy/releases/tag/v2.0.0-20261114) |
 | v1.0.0（v1.0.0-20261023） | 2026-10-23 | 首次发布：12 页、5 幅地图、三大信经背诵版与比较、HC/BC/DT 165 处逐字引文实时核对、闪卡与测验。 | [Surge v1](https://pentateuch-20261023-v1-grokstudy.surge.sh) · [Netlify v1](https://pentateuch-20261023-v1-grokstudy.netlify.app) · [Release](https://github.com/07-Je-Grok-Love-Personal-20260928/Pentateuch-Moses-Five-Books-GROKstudy/releases/tag/v1.0.0-20261023) |

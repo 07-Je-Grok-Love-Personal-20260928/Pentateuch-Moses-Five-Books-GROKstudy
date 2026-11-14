@@ -11,7 +11,7 @@ def _defs(uid, stops=None):
     stops = stops or (('#1a2a58','#0b1a33'),)
     s=''.join(f'<stop offset="{i/(len(stops)-1 if len(stops)>1 else 1):.2f}" stop-color="{c}"/>' for i,c in enumerate(stops))
     return f'<defs><linearGradient id="{uid}-bg" x1="0" y1="0" x2="1" y2="1">{s}</linearGradient>' \
-           f'<filter id="{uid}-s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity=".35"/></filter></defs>'
+           f'</defs>'
 
 def abraham():
     u='abrs'
@@ -20,7 +20,7 @@ def abraham():
 <!-- stars of promise -->
 <g fill="#f5c451" opacity=".9">{''.join(f'<circle cx="{x}" cy="{y}" r="{r}"/>' for x,y,r in [(80,40,1.6),(140,28,1.2),(200,50,1.8),(260,22,1),(320,38,1.4),(900,30,1.5),(980,48,1.2),(1040,24,1.8)])}</g>
 <!-- ziggurat Ur -->
-<g transform="translate(40,200)" filter="url(#{u}-s)">
+<g transform="translate(40,200)">
   <path d="M10,160 L50,160 L58,120 L42,120 Z" fill="#c4a574"/><path d="M20,120 L70,120 L78,86 L32,86 Z" fill="#d4b896"/>
   <path d="M32,86 L80,86 L86,58 L40,58 Z" fill="#e2c9a8"/><rect x="52" y="36" width="16" height="22" fill="#f0dcc0"/>
   <text x="48" y="190" text-anchor="middle" fill="#f5c451" font-size="15" font-weight="700">吾珥</text>
@@ -34,7 +34,7 @@ def abraham():
 <!-- path -->
 <path d="M130,280 C200,240 250,250 310,230 C400,200 480,260 560,230 C650,196 720,210 790,250 C860,286 920,240 1000,220" fill="none" stroke="#f5c451" stroke-width="4" stroke-dasharray="10 8" stroke-linecap="round" class="rt"/>
 <!-- Canaan oaks + altar -->
-<g transform="translate(520,200)" filter="url(#{u}-s)">
+<g transform="translate(520,200)">
   <ellipse cx="50" cy="90" rx="60" ry="18" fill="#1a3a28" opacity=".4"/>
   <path d="M50,90 L50,40" stroke="#6b4226" stroke-width="8"/>
   <path d="M50,48 C10,20 8,70 50,58 C90,70 92,16 50,48" fill="#3d8b5a"/>

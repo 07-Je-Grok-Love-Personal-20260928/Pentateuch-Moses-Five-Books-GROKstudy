@@ -41,6 +41,7 @@ def lint(fn,html):
             pos=i+len(p)
         if not ok: warn.append((fn,ref,q,v[:90]))
 for fn,mod in MODS.items():
+    lib.reset_outline()
     m=importlib.import_module(mod)
     body=m.build_body() if hasattr(m,'build_body') else m.BODY
     h=tpl.page(fn,m.TITLE,m.DESC,m.HERO,body)
